@@ -27,7 +27,7 @@ contract PairRewarderFactory is Initializable {
     ) public initializer {
         dibs = dibs_;
         pairRewarderBytecode = bytecode_;
-        _updateImplementationUsingFromtecode();
+        _updateImplementationFromBytecode();
         proxyAdmin = address(new ProxyAdmin());
     }
 
@@ -81,7 +81,7 @@ contract PairRewarderFactory is Initializable {
         bytes memory bytecode_
     ) external onlySetter {
         pairRewarderBytecode = bytecode_;
-        _updateImplementationUsingFromtecode();
+        _updateImplementationFromBytecode();
     }
 
     /// @notice upgrade pairRewarders to new implementation
@@ -100,7 +100,7 @@ contract PairRewarderFactory is Initializable {
 
     /// ========================= internal =========================
 
-    function _updateImplementationUsingFromtecode() internal {
+    function _updateImplementationFromBytecode() internal {
         address implementation;
         bytes memory bytecode = pairRewarderBytecode;
 
