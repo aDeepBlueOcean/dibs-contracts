@@ -43,6 +43,8 @@ contract Dibs is AccessControlUpgradeable {
 
     mapping(address => uint256) public excessClaimedBalance; // token => claimed balance
 
+    address public pairRewarderFactory;
+
     // * these values are in SCALE units (1e6) and should be divided by SCALE to get the actual percentage
     // the sum of these values should be 1e6
 
@@ -280,6 +282,16 @@ contract Dibs is AccessControlUpgradeable {
             _grandparentPercentage,
             _dibsPercentage
         );
+    }
+
+    // set pairRewarderFactory address
+    event SetPairRewarderFactory(address _old, address _new);
+
+    function setPairRewarderFactory(
+        address _pairRewarderFactory
+    ) external onlyRole(SETTER) {
+        emit SetPairRewarderFactory(pairRewarderFactory, _pairRewarderFactory);
+        pairRewarderFactory = _pairRewarderFactory;
     }
 
     function recoverERC20(
