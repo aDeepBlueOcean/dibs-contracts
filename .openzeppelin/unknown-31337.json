@@ -2,7 +2,7 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "txHash": "0x303df5ddf52483eaf588fc3626238126f25565c03e4ed53597fbc9cd09880ea6"
+    "txHash": "0x368fa49ab758ef7e54b91ad809b441ba1f1c0a0f9c2a5007fdb85bce771b58f4"
   },
   "proxies": [
     {
@@ -921,11 +921,6 @@
       "kind": "transparent"
     },
     {
-      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-      "txHash": "0x8071b4bac9a09a5c0b2d2f59f091408b17ec6ca3090fc2295ff14cf35b384515",
-      "kind": "transparent"
-    },
-    {
       "address": "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
       "txHash": "0x3b749b1f221628e1469fd3113d24bb45996ad59e4269427e891769fea58163a4",
       "kind": "transparent"
@@ -1323,6 +1318,11 @@
     {
       "address": "0x32cd5ecdA7f2B8633C00A0434DE28Db111E60636",
       "txHash": "0x8710578265dd3602f81931a6fc7182f936382b2eaac88cee00fdeee46757a4fa",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0x83bf60d4f02101fb428a39179c7e971fac97f1ddd4f8bebf79b468bc1e1e26f8",
       "kind": "transparent"
     }
   ],
@@ -2291,296 +2291,6 @@
         }
       }
     },
-    "339b697f10bda03293856353795e0ecf6f25f6957dd9c2c22c36c96e8adf78e7": {
-      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x31554b827da0575eb9fffaa3fd27ea888d0f3d876e403c66da1a5993f822a319",
-      "layout": {
-        "solcVersion": "0.8.17",
-        "storage": [
-          {
-            "label": "_initialized",
-            "offset": 0,
-            "slot": "0",
-            "type": "t_uint8",
-            "contract": "Initializable",
-            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
-            "retypedFrom": "bool"
-          },
-          {
-            "label": "_initializing",
-            "offset": 1,
-            "slot": "0",
-            "type": "t_bool",
-            "contract": "Initializable",
-            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "1",
-            "type": "t_array(t_uint256)50_storage",
-            "contract": "ContextUpgradeable",
-            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "51",
-            "type": "t_array(t_uint256)50_storage",
-            "contract": "ERC165Upgradeable",
-            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
-          },
-          {
-            "label": "_roles",
-            "offset": 0,
-            "slot": "101",
-            "type": "t_mapping(t_bytes32,t_struct(RoleData)386_storage)",
-            "contract": "AccessControlUpgradeable",
-            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:61"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "102",
-            "type": "t_array(t_uint256)49_storage",
-            "contract": "AccessControlUpgradeable",
-            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:259"
-          },
-          {
-            "label": "PROJECT_ID",
-            "offset": 0,
-            "slot": "151",
-            "type": "t_bytes32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:12"
-          },
-          {
-            "label": "muonInterface",
-            "offset": 0,
-            "slot": "152",
-            "type": "t_address",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:17"
-          },
-          {
-            "label": "addressToCode",
-            "offset": 0,
-            "slot": "153",
-            "type": "t_mapping(t_address,t_bytes32)",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:20"
-          },
-          {
-            "label": "codeToAddress",
-            "offset": 0,
-            "slot": "154",
-            "type": "t_mapping(t_bytes32,t_address)",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:21"
-          },
-          {
-            "label": "codeToName",
-            "offset": 0,
-            "slot": "155",
-            "type": "t_mapping(t_bytes32,t_string_storage)",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:22"
-          },
-          {
-            "label": "parents",
-            "offset": 0,
-            "slot": "156",
-            "type": "t_mapping(t_address,t_address)",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:23"
-          },
-          {
-            "label": "claimedBalance",
-            "offset": 0,
-            "slot": "157",
-            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:25"
-          },
-          {
-            "label": "SCALE",
-            "offset": 0,
-            "slot": "158",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:28"
-          },
-          {
-            "label": "grandparentPercentage",
-            "offset": 4,
-            "slot": "158",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:29"
-          },
-          {
-            "label": "dibsPercentage",
-            "offset": 8,
-            "slot": "158",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:30"
-          },
-          {
-            "label": "dibsLottery",
-            "offset": 12,
-            "slot": "158",
-            "type": "t_address",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:32"
-          },
-          {
-            "label": "wethPriceFeed",
-            "offset": 0,
-            "slot": "159",
-            "type": "t_address",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:33"
-          },
-          {
-            "label": "firstRoundStartTime",
-            "offset": 20,
-            "slot": "159",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:35"
-          },
-          {
-            "label": "roundDuration",
-            "offset": 24,
-            "slot": "159",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:36"
-          },
-          {
-            "label": "referrerPercentage",
-            "offset": 28,
-            "slot": "159",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:38"
-          },
-          {
-            "label": "refereePercentage",
-            "offset": 0,
-            "slot": "160",
-            "type": "t_uint32",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:39"
-          },
-          {
-            "label": "blacklisted",
-            "offset": 0,
-            "slot": "161",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:42"
-          },
-          {
-            "label": "excessClaimedBalance",
-            "offset": 0,
-            "slot": "162",
-            "type": "t_mapping(t_address,t_uint256)",
-            "contract": "Dibs",
-            "src": "contracts/Dibs.sol:44"
-          }
-        ],
-        "types": {
-          "t_address": {
-            "label": "address",
-            "numberOfBytes": "20"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]",
-            "numberOfBytes": "1568"
-          },
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]",
-            "numberOfBytes": "1600"
-          },
-          "t_bool": {
-            "label": "bool",
-            "numberOfBytes": "1"
-          },
-          "t_bytes32": {
-            "label": "bytes32",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_address)": {
-            "label": "mapping(address => address)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_bool)": {
-            "label": "mapping(address => bool)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_bytes32)": {
-            "label": "mapping(address => bytes32)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
-            "label": "mapping(address => mapping(address => uint256))",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_uint256)": {
-            "label": "mapping(address => uint256)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_bytes32,t_address)": {
-            "label": "mapping(bytes32 => address)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_bytes32,t_string_storage)": {
-            "label": "mapping(bytes32 => string)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_bytes32,t_struct(RoleData)386_storage)": {
-            "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)",
-            "numberOfBytes": "32"
-          },
-          "t_string_storage": {
-            "label": "string",
-            "numberOfBytes": "32"
-          },
-          "t_struct(RoleData)386_storage": {
-            "label": "struct AccessControlUpgradeable.RoleData",
-            "members": [
-              {
-                "label": "members",
-                "type": "t_mapping(t_address,t_bool)",
-                "offset": 0,
-                "slot": "0"
-              },
-              {
-                "label": "adminRole",
-                "type": "t_bytes32",
-                "offset": 0,
-                "slot": "1"
-              }
-            ],
-            "numberOfBytes": "64"
-          },
-          "t_uint256": {
-            "label": "uint256",
-            "numberOfBytes": "32"
-          },
-          "t_uint32": {
-            "label": "uint32",
-            "numberOfBytes": "4"
-          },
-          "t_uint8": {
-            "label": "uint8",
-            "numberOfBytes": "1"
-          }
-        }
-      }
-    },
     "5faa2bf557153772b9fc77d4ee44ed18f7b50218a4e4d005650f1c9968cafe0a": {
       "address": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
       "txHash": "0x0cbb2e57d59cf33fe89a6127353c5db6b9671201d75db414b7f25567cf79bd72",
@@ -3364,8 +3074,8 @@
       }
     },
     "83c9c4939af75514b78d44f3ad685004c021bd977ea97b40933a49718e613fbf": {
-      "address": "0xf5C3953Ae4639806fcbCC3196f71dd81B0da4348",
-      "txHash": "0x6662b95025050e23565d990cbb3323c99cbfefa8931cbca1a2d473811dd170cd",
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "txHash": "0xe5bd4fa02074b12300afdd7ae406ca4d10a7ce3a1cecf7d457238e91aa368872",
       "layout": {
         "solcVersion": "0.8.17",
         "storage": [
