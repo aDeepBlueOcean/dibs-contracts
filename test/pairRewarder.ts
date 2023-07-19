@@ -4,13 +4,17 @@ import {
   Dibs__factory,
   ERC20__factory,
   PairRewarder,
+  PairRewarderFactory,
+  Proxy,
 } from "../typechain-types";
 import { MockContract, deployMockContract } from "ethereum-waffle";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { getCurrentTimeStamp } from "./timeUtils";
 import { BigNumber } from "ethers";
+import { PairRewarder__factory } from "../typechain-types/factories/contracts/PairRewarder.sol";
 
 describe("PairRewarder", () => {
+  let pairRewarderFactory: PairRewarderFactory;
   let pairRewarder: PairRewarder;
   let dibs: MockContract;
   let pair: MockContract;
@@ -31,15 +35,40 @@ describe("PairRewarder", () => {
     rt2 = await deployMockContract(admin, ERC20__factory.abi);
     dibs = await deployMockContract(admin, Dibs__factory.abi);
 
-    const PairRewarderFactory = await ethers.getContractFactory("PairRewarder");
-    const args = [dibs.address, pair.address, admin.address, setter.address];
-    pairRewarder = (await upgrades.deployProxy(
-      PairRewarderFactory,
-      args
-    )) as PairRewarder;
-    await pairRewarder.deployed();
+    const PairRewarderFactory = await ethers.getContractFactory(
+      "PairRewarderFactory"
+    );
 
+    pairRewarderFactory = (await upgrades.deployProxy(PairRewarderFactory, [
+      dibs.address,
+      PairRewarder__factory.bytecode,
+    ])) as PairRewarderFactory;
+
+    await pairRewarderFactory.deployPairRewarder(
+      pair.address,
+      admin.address,
+      setter.address
+    );
+
+    const pairRewarderAddress = await pairRewarderFactory.pairRewarders(
+      pair.address,
+      0
+    );
+
+    pairRewarder = await ethers.getContractAt(
+      "PairRewarder",
+      pairRewarderAddress
+    );
+
+    await pairRewarder.deployed();
     await dibs.mock.muonInterface.returns(muonInterface.address);
+  });
+
+  it("should be able to get proxy admin", async () => {
+    const proxy = await ethers.getContractAt(
+      "ERC1967Proxy",
+      pairRewarder.address
+    );
   });
 
   it("should have the correct pair and dibs address and roles", async () => {

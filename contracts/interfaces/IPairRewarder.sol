@@ -24,6 +24,13 @@ interface IPairRewarder {
         address user
     ) external view returns (uint256[] memory);
 
+    function initialize(
+        address dibs_,
+        address pair_,
+        address admin_,
+        address setter_
+    ) external;
+
     event LeaderBoardSet(
         uint256 winnersCount,
         address[] rewardTokens,

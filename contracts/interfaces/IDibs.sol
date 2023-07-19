@@ -29,4 +29,15 @@ interface IDibs {
         uint256 accumulativeBalance,
         uint256 amount
     ) external;
+
+    // roles
+
+    function SETTER() external view returns (bytes32);
+
+    function DEFAULT_ADMIN_ROLE() external view returns (bytes32);
+
+    function hasRole(
+        bytes32 role,
+        address account
+    ) external view returns (bool);
 }
